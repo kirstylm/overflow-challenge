@@ -1,0 +1,13 @@
+<h1>Shopping!!!!11!!</h1>
+
+<ul id="products">
+  <% @products.each do |product| %>
+    <li>
+      <strong><%= product.name %></strong>
+      <%= simple_format(product.description) %>
+      <em><%= product.price %></em>
+      <br />
+      <%= link_to "Details", product_path(product) %>
+    </li>
+  <% end %>
+</ul>

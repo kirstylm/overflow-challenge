@@ -1,0 +1,11 @@
+<h1>Answers</h1>
+
+<ul id="answers">
+  <% @answers.each do |answer| %>
+    <li>
+      <%= simple_format(answer.description) %>
+
+      <%= link_to "Question", question_path(answer.question_id) %>
+    </li>
+  <% end %>
+</ul>

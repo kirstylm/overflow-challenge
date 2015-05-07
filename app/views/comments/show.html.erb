@@ -1,0 +1,13 @@
+<h1><%= @product.name %></h1>
+<h1><%= @product.id %></h1>
+<%= simple_format(@product.description) %>
+<em><%= @product.price %></em>
+<br />
+
+<%= form_for Cart.new do |f| %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.submit "Add to Cart" %>
+<% end %>
+
+
+<%= link_to "Product List", products_path %>

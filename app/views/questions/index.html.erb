@@ -1,0 +1,11 @@
+<h1>Questions</h1>
+
+<ul id="questions">
+  <% @questions.each do |question| %>
+    <li>
+      <strong><%= question.title %></strong>
+      <p>User who created question: <%= question.user_id %></p>
+      <%= link_to "View question", question_path(question) %>
+    </li>
+  <% end %>
+</ul>
