@@ -1,3 +1,3 @@
-class AnswersController < ActionController::Base
+class AnswersController < ApplicationController
 
 end

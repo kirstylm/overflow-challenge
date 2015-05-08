@@ -1,13 +1,13 @@
-class QuestionsController < ActionController::Base
+class QuestionsController < ApplicationController
   # def index
   #   query_params = Rack::Utils.parse_nested_query request.env["QUERY_STRING"]
   #   @questions = Question.where(query_params)
   # end
   def index
     if params[:user_id]
-      @questions = User.find(params[:user_id]).questions
+      @questions = User.find(params[:user_id]).questions.paginate(:page => params[:page], :per_page => 5)
     else
-      @questions = Question.all
+      @questions = Question.paginate(:page => params[:page], :per_page => 5)
     end
   end
 

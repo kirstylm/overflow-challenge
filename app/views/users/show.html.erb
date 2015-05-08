@@ -1,4 +1,9 @@
-<h3>User</h3>
+<h3>User: <%= @user.id if @user.id %></h3>
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
-<p>Id: <%= @user.id if @user.id %></p>
+
+<ul>
+  <li><%= link_to 'My questions', user_questions_path(current_user) %></li>
+  <li><%= link_to 'My answers', user_answers_path(current_user) %></li>
+  <li><%= link_to 'My comments', user_comments_path(current_user) %></li>
+</ul>

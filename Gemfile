@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.0.5'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]

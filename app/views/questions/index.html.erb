@@ -1,5 +1,7 @@
 <h1>Questions</h1>
 
+<%= link_to "Create new question", new_question_path %>
+
 <ul id="questions">
   <% @questions.each do |question| %>
     <li>
@@ -9,3 +11,6 @@
     </li>
   <% end %>
 </ul>
+
+
+<%= will_paginate @questions %>
