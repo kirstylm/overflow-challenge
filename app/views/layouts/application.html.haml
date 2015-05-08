@@ -12,4 +12,6 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
+      #breadcrumbs
+        = render_breadcrumbs
       = yield

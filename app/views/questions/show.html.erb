@@ -1,7 +1,7 @@
 <h1><%= @question.title %>: <%= @question.id %></h1>
 <p><%= @question.description %></p>
 
-
+<%= render 'answers/new' %>
 
 
 <%= link_to "Questions", questions_path %>

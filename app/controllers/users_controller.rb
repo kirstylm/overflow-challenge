@@ -1,12 +1,21 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only, :except => :show
+  before_filter :current_user_id
+
+  add_breadcrumb "Account dashboard", "/users/#{@current_user_id}"
+
+  def current_user_id
+    @current_user_id = current_user
+  end
 
   def index
     @users = User.all
   end
 
   def show
+
+
     @user = User.find(params[:id])
     unless current_user.admin?
       unless @user == current_user
@@ -14,7 +23,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(secure_params)
